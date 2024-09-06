@@ -7,11 +7,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
-        'nav-text': '#221d1d',
+        'nav-text': '#221D1D',
         'nav-hover': '#f5f5f5',
+        'hero-text': '#221D1D',
+        'overview-text': '#636161',
       },
       borderRadius: {
         'nav': '50px',

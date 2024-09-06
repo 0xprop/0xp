@@ -62,18 +62,35 @@ footer {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 @layer components {
-  .nav-item {
-    @apply font-inter text-[#211D1D] font-medium;
+  .headline {
+    @apply text-4xl sm:text-5xl font-semibold text-[#221D1D] mb-6 font-roboto;
+  }
+  
+  .overview {
+    @apply text-lg sm:text-xl text-[#636161] mb-8 font-inter font-medium max-w-2xl;
+  }
+  
+  .cta-button {
+    @apply px-6 py-3 bg-white text-[#221D1D] border border-gray-300 rounded-full font-inter font-medium hover:bg-gray-100 transition duration-300;
   }
 
   .nav-menu-button {
-    @apply inline-block relative rounded-nav py-[9px] px-4 bg-transparent;
-    @apply font-sans text-sm font-medium leading-[105%] tracking-[-0.09px] text-nav-text;
+    @apply inline-block relative rounded-full py-[9px] px-4 bg-transparent;
+    @apply font-inter text-sm font-medium leading-[105%] tracking-[-0.09px] text-[#221D1D];
     @apply transition-colors duration-150 ease-in-out;
-    @apply no-underline !important;
+    @apply no-underline;
   }
 
   .nav-menu-button:hover {
-    @apply bg-nav-hover !important;
+    @apply bg-[#f5f5f5];
   }
 }
+
+/* Additional global styles to remove link underlines */
+@layer base {
+  a {
+    @apply no-underline;
+  }
+}
+
+/* Any other global styles can go here */
