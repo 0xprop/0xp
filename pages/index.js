@@ -18,7 +18,7 @@ export default function Home() {
 
   const headlineVariants = {
     hidden: { x: -100, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.6 } }
+    visible: { x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.6 } }
   };
 
   const overviewVariants = {
@@ -27,8 +27,8 @@ export default function Home() {
   };
 
   const ctaVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5, delay: 1.2 } }
+    hidden: { y: 10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 1.2 } }
   };
 
   return (
@@ -47,7 +47,7 @@ export default function Home() {
                 animate={isLoaded ? "visible" : "hidden"}
                 variants={headlineVariants}
               >
-                <Headline>On-chain Real Estate Investment</Headline>
+                <Headline>On-Chain Real Estate Investment</Headline>
               </motion.div>
               <motion.div
                 initial="hidden"
