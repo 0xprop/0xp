@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import { Headline, Overview, CTAButton } from '../components/Typography';
 import RectanglesIcon from '../components/RectanglesIcon';
 import FeatureHighlight from '../components/FeatureHighlight';
