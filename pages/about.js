@@ -11,7 +11,7 @@ export default function About() {
       <Header />
       <main>
         <h1>About</h1>
-        <p>Here's some information about me.</p>
+        <p>This is my &apos;about&apos; page.</p>
       </main>
       <Footer />
     </div>
