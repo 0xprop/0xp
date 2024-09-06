@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>My First Website</title>
+        <title>My awesome website</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
