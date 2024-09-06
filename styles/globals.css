@@ -7,6 +7,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Inter, sans-serif;
+  }
+}
+
 /* Your existing CSS */
 body {
   font-family: Arial, sans-serif;
@@ -51,4 +57,23 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+@layer components {
+  .nav-item {
+    @apply font-inter text-[#211D1D] font-medium;
+  }
+
+  .nav-menu-button {
+    @apply inline-block relative rounded-nav py-[9px] px-4 bg-transparent;
+    @apply font-sans text-sm font-medium leading-[105%] tracking-[-0.09px] text-nav-text;
+    @apply transition-colors duration-150 ease-in-out;
+    @apply no-underline !important;
+  }
+
+  .nav-menu-button:hover {
+    @apply bg-nav-hover !important;
+  }
 }
