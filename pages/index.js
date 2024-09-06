@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>On-chain Real Estate Investment</title>
+        <title>On-Chain Real Estate Investment</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
       <Header />
