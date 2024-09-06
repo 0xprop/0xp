@@ -1,45 +1,30 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
-export default function Header() {
-  const linkStyle = {
-    textDecoration: 'none',
-  };
-
+const Header = () => {
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" style={linkStyle}>
-              <Image src="/logo.png" alt="Logo" width={40} height={40} />
+    <header className="bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center">
+            <Link href="/" className="text-decoration-none">
+              <span className="font-montserrat font-black text-2xl text-nav-text">Øxprop</span>
             </Link>
           </div>
-          
-          {/* Navigation Menu */}
-          <nav className="hidden md:flex space-x-2">
-            <Link href="/" className="nav-menu-button" style={linkStyle}>
+          <nav className="flex items-center">
+            <Link href="/" className="font-inter font-medium text-nav-text hover:bg-gray-100 px-3 py-2 transition-colors duration-200 rounded-full">
               Home
             </Link>
-            <Link href="/about" className="nav-menu-button" style={linkStyle}>
+            <Link href="/about" className="font-inter font-medium text-nav-text hover:bg-gray-100 px-3 py-2 transition-colors duration-200 rounded-full">
               About
             </Link>
-            <Link href="/contact" className="nav-menu-button" style={linkStyle}>
+            <Link href="/contact" className="font-inter font-medium text-nav-text hover:bg-gray-100 px-3 py-2 transition-colors duration-200 rounded-full">
               Contact
             </Link>
           </nav>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button className="text-[#221D1D] hover:text-blue-600">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;
