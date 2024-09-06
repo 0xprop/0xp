@@ -2,16 +2,16 @@ import Head from 'next/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function Home() {
+export default function Contact() {
   return (
     <div>
       <Head>
-        <title>My Home Page</title>
+        <title>Contact Me</title>
       </Head>
       <Header />
       <main>
-        <h1>Welcome to My Site</h1>
-        <p>This is the home page content.</p>
+        <h1>Contact</h1>
+        <p>Get in touch with me here.</p>
       </main>
       <Footer />
     </div>
