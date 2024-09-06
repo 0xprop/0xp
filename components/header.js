@@ -1,9 +1,20 @@
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navStyle = {
+    display: 'inline-block',
+    borderRadius: '50px',
+    padding: '9px 16px',
+    backgroundColor: 'transparent',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '14px',
+    fontWeight: 500,
+    lineHeight: '105%',
+    letterSpacing: '-0.09px',
+    color: '#221d1d',
+    transition: 'background-color 0.15s ease',
+  };
 
   return (
     <header className="bg-white shadow-md">
@@ -16,34 +27,28 @@ export default function Header() {
             </Link>
           </div>
           
-          {/* Desktop Navigation Menu */}
-          <nav className="hidden md:flex space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">Contact</Link>
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex space-x-2">
+            <Link href="/" style={navStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
+              <span className="block">Home</span>
+            </Link>
+            <Link href="/about" style={navStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
+              <span className="block">About</span>
+            </Link>
+            <Link href="/contact" style={navStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>
+              <span className="block">Contact</span>
+            </Link>
           </nav>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600"
-            >
+            <button className="text-nav-text hover:text-blue-600">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
-        
-        {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <nav className="md:hidden py-4">
-            <Link href="/" className="block py-2 text-gray-700 hover:text-blue-600">Home</Link>
-            <Link href="/about" className="block py-2 text-gray-700 hover:text-blue-600">About</Link>
-            <Link href="/contact" className="block py-2 text-gray-700 hover:text-blue-600">Contact</Link>
-          </nav>
-        )}
       </div>
     </header>
   );
