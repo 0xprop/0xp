@@ -1,19 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import Layout from '../components/Layout';
 import { Headline, Overview, CTAButton } from '../components/Typography';
 import RectanglesIcon from '../components/RectanglesIcon';
 import FeatureHighlight from '../components/FeatureHighlight';
-import ComingSoonSection from '../components/ComingSoonSection'; // Import the new section
+import ComingSoonSection from '../components/ComingSoonSection';
 import styles from '../styles/RectanglesIcon.module.css';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    console.log("Setting isLoaded to true");
     const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
@@ -53,17 +51,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <Layout>
       <Head>
-        <title>On-Chain Real Estate Investment</title>
-        {/* Other head elements */}
+        <title>On-Chain Real Estate Investment - Øxprop</title>
       </Head>
-      <Header />
-      <main className="flex-grow">
+      <div className="flex flex-col">
         {/* Hero section */}
-        <section className="hero bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl">
+        <section className="hero bg-white pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-16"> {/* Reduced top padding */}
+          <div className="site-container">
+            <div className="max-w-4xl mt-12 sm:mt-16 md:mt-20 lg:mt-24"> {/* Increased max-width */}
               <motion.div
                 initial="hidden"
                 animate={isLoaded ? "visible" : "hidden"}
@@ -103,10 +99,9 @@ export default function Home() {
         {/* Meet Øxprop section */}
         <section 
           ref={meetSectionRef}
-          className="bg-white py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center" 
-          style={{ minHeight: '40vh' }}
+          className="bg-white py-16 sm:py-20 flex items-center justify-center min-h-[70vh]"
         >
-          <div className="text-center">
+          <div className="site-container text-center">
             <motion.div
               initial="hidden"
               animate={isMeetSectionInView ? "visible" : "hidden"}
@@ -120,6 +115,7 @@ export default function Home() {
               animate={isMeetSectionInView ? "visible" : "hidden"}
               variants={fadeInUpVariants}
               transition={{ delay: 0.2 }} // Slight delay for the tagline
+              className="mx-auto max-w-2xl"
             >
               <Overview>The future of real estate investing</Overview>
             </motion.div>
@@ -129,22 +125,16 @@ export default function Home() {
         {/* Feature Highlight section */}
         <section 
           ref={featureHighlightRef}
-          className="bg-white pt-4 pb-16 px-4 sm:px-6 lg:px-8" // Reduced top padding
+          className="bg-white pt-4 pb-16"
         >
-          <motion.div 
-            className="max-w-7xl mx-auto"
-            initial="hidden"
-            animate={isFeatureHighlightInView ? "visible" : "hidden"}
-            variants={fadeInUpVariants}
-          >
+          <div className="site-container">
             <FeatureHighlight />
-          </motion.div>
+          </div>
         </section>
 
         {/* Coming Soon Section */}
         <ComingSoonSection />
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </Layout>
   );
 }
