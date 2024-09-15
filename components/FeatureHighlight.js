@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 const features = [
   {
     title: 'Tokenization',
-    description: 'Transform real estate assets into digital tokens, enabling fractional ownership and increased liquidity.'
-  },
-  {
-    title: 'Blockchain',
-    description: 'Leverage blockchain technology for transparent, secure, and efficient real estate transactions.'
+    description: 'Real estate investment through cutting-edge blockchain technology. 0xProp transforms traditional property ownership into digital assets, offering unparalleled accessibility and liquidity. Our dynamic approach ensures that investors can participate in premium real estate opportunities with unprecedented ease and flexibility.'
   },
   {
     title: 'Real Estate',
-    description: 'Revolutionize traditional real estate investing with innovative digital solutions and global accessibility.'
+    description: 'Curating a portfolio of top-tier properties for discerning investors. 0xProp focuses on high-quality, tier 1 real estate projects that promise strong returns and growth potential. Our commitment to transparency means you\'ll always have clear, comprehensive information about each investment opportunity, empowering you to make informed decisions.'
+  },
+  {
+    title: 'Blockchain',
+    description: 'Leveraging the power of blockchain to redefine real estate transactions. 0xProp utilizes secure, transparent, and efficient blockchain technology to streamline property investments. Our platform ensures tamper-proof records, rapid settlements, and reduced intermediary costs, providing a new standard of trust and efficiency in real estate investing.'
   }
 ];
 
@@ -28,7 +28,7 @@ const FeatureHighlight = () => {
               <button
                 className={`text-left w-full p-4 rounded-lg transition-colors ${
                   activeFeature === index 
-                    ? 'bg-blue-500 text-white' // Match CTA button style
+                    ? 'bg-[#A9E7FF] text-white' // Change to the selected color
                     : 'bg-white text-gray-800 hover:bg-gray-100'
                 }`}
                 onClick={() => setActiveFeature(index)}
@@ -48,7 +48,7 @@ const FeatureHighlight = () => {
           transition={{ duration: 0.3 }}
           className="p-6 rounded-lg"
         >
-          <h3 className="text-2xl font-bold mb-4 text-blue-500">{features[activeFeature].title}</h3>
+          <h3 className="text-2xl font-bold mb-4 text-gray-700">{features[activeFeature].title}</h3> {/* Changed to match subtitle color */}
           <p className="text-gray-700">{features[activeFeature].description}</p>
         </motion.div>
       </div>
