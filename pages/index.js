@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Head from 'next/head';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Headline, Overview, CTAButton } from '../components/Typography';
 import RectanglesIcon from '../components/RectanglesIcon';
 import FeatureHighlight from '../components/FeatureHighlight';
+import ComingSoonSection from '../components/ComingSoonSection'; // Import the new section
 import styles from '../styles/RectanglesIcon.module.css';
 
 export default function Home() {
@@ -83,7 +84,7 @@ export default function Home() {
                 animate={isLoaded ? "visible" : "hidden"}
                 variants={ctaVariants}
               >
-                <CTAButton onClick={() => console.log('CTA clicked')}>Get Started</CTAButton>
+                <CTAButton onClick={() => console.log('CTA clicked')}>Coming Soon</CTAButton>
               </motion.div>
             </div>
             <motion.div
@@ -139,6 +140,9 @@ export default function Home() {
             <FeatureHighlight />
           </motion.div>
         </section>
+
+        {/* Coming Soon Section */}
+        <ComingSoonSection />
       </main>
       <Footer />
     </div>
